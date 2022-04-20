@@ -1,19 +1,62 @@
-// Stories
-// Features
-// Pricing
+import React from "react";
+import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
+import HeroImg from "../assets/home/desktop/create-and-share.jpg";
+import BeautifulStoriesImg from "../assets/home/desktop/beautiful-stories.jpg";
 
-// Get an invite
-
-// Create and share your photo Stories
-
-// Photosnap is a platform for photographers and visual storytellers. We make it
-// easy to share photos, tell stories and connect with others.
-
-// Beautiful stories every time
-
-// We provide design templates to ensure your stories look terrific. Easily add
-// photos, text, embed maps and media from other networks. Then share your story
-// with everyone.
+function Home() {
+  return (
+    <main>
+      <section className="home-section home-section--hero">
+        <div className="home-section-text">
+          <div className="text-wrapper">
+            <h1>Create and share your photo Stories.</h1>
+            <p>
+              Photosnap is a platform for photographers and visual storytellers.
+              We make it easy to share photos, tell stories and connect with
+              others.
+            </p>
+            <button className="btn-arrow btn-arrow--white">
+              get an invite
+              <img
+                className="btn-arrow-icon"
+                src={ArrowRightWhite}
+                alt="Arrow Right"
+              />
+            </button>
+          </div>
+        </div>
+        <img src={HeroImg} alt="create-and-share" />
+      </section>
+      {/* Beautiful Stories Section*/}
+      <section className="home-section">
+        <img
+          className="section-img"
+          src={BeautifulStoriesImg}
+          alt="create-and-share"
+        />
+        <div className="home-section-text">
+          <div className="text-wrapper">
+            <h1>Beautiful stories every time</h1>
+            <p>
+              We provide design templates to ensure your stories look terrific.
+              Easily add photos, text, embed maps and media from other networks.
+              Then share your story with everyone.
+            </p>
+            <button className="btn-arrow btn-arrow--white">
+              get an invite
+              <img
+                className="btn-arrow-icon"
+                src={ArrowRightWhite}
+                alt="Arrow Right"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+export default Home;
 
 // View the stories
 

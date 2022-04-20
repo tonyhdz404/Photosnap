@@ -1,13 +1,166 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+/* Colors */
+:root {
+  --pureBlack: hsl(0, 0%, 0%);
+  --lightGrey: hsl(0, 0%, 87%);
+  --pureWhite: hsl(0, 0%, 100%);
+}
+/* Global Resets */
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-family: "DM Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Heading Styles */
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 4.17px;
+  line-height: 4.8rem;
+}
+h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: 2px;
+}
+/* Simple Components */
+img {
+  display: block;
+}
+.btn-arrow {
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.25s;
+}
+.btn-arrow:hover {
+  text-decoration: underline;
+}
+.btn-arrow--white {
+  color: white;
+}
+.btn-arrow-icon {
+  margin-left: 1.6rem;
+}
+.btn {
+  text-transform: uppercase;
+  width: 15.8rem;
+  height: 4rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.btn--black {
+  background-color: var(--pureBlack);
+  color: var(--pureWhite);
+}
+.btn--black:hover {
+  background-color: var(--lightGrey);
+  color: var(--pureBlack);
+}
+.btn--white {
+  background-color: var(--pureWhite);
+  color: var(--pureBlack);
+}
+.btn--white:hover {
+  background-color: var(--pureBlack);
+  color: var(--pureWhite);
+}
+a {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  color: currentColor;
+  text-transform: uppercase;
+}
+
+/* NavBar Styles */
+nav {
+  width: 100%;
+  height: 7.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+.nav__links > li:not(:last-child) {
+  margin-right: 3.6rem;
+}
+/* Home Page Styles */
+.home-section {
+  height: 60rem;
+  display: flex;
+}
+.home-section-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-wrapper {
+  width: 38.7rem;
+}
+.text-wrapper h1 {
+  margin-bottom: 2.1rem;
+}
+.text-wrapper p {
+  margin-bottom: 4.8rem;
+}
+.home-section--hero {
+  background-color: var(--pureBlack);
+  color: white;
+  height: 65rem;
+  width: 100%;
+}
+.home-section--hero p {
+  color: var(--lightGrey);
+}
+.section-img {
+  object-fit: cover;
+  width: 100%;
 }
