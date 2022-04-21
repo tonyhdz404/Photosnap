@@ -49,7 +49,25 @@ h4 {
   line-height: 1.6rem;
   letter-spacing: 2px;
 }
+.copywrite {
+  color: gray;
+  font-size: 15px;
+  font-weight: 400;
+}
 /* Simple Components */
+a {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  color: currentColor;
+  text-transform: uppercase;
+}
+ul {
+  list-style: none;
+}
 img {
   display: block;
 }
@@ -104,16 +122,6 @@ img {
   background-color: var(--pureBlack);
   color: var(--pureWhite);
 }
-a {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-  cursor: pointer;
-  color: currentColor;
-  text-transform: uppercase;
-}
 
 /* NavBar Styles */
 nav {
@@ -163,4 +171,102 @@ nav {
 .section-img {
   object-fit: cover;
   width: 100%;
+}
+/* Individual Img Styles */
+.beautiful-stories {
+  width: 105rem;
+  height: 60rem;
+}
+
+.designed-for-everyone {
+  object-fit: contain;
+  object-position: right;
+}
+/* Info Section */
+.info-section {
+  width: 100%;
+  height: 47.6rem;
+}
+/* Stories Wrapper */
+.stories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.story-wrapper {
+  width: 100%;
+}
+.story-img {
+  width: 100%;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--pureBlack);
+  width: 100%;
+  height: 25rem;
+  padding: 6.4rem 16.4rem 6.4rem 17.1rem;
+}
+
+.footer-content {
+  /* background-color: gainsboro; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.footer-logo-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 10.9rem;
+  height: 100%;
+  width: max-content;
+}
+.footer-links > li:not(:last-child) {
+  height: 16px;
+  margin-bottom: 1.9rem;
+}
+.footer__link {
+  color: var(--pureWhite);
+}
+
+.social-icons {
+  width: 15.4rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.copywrite-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  height: 100%;
+  width: max-content;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  max-width: 111rem;
+  height: 23.6rem;
+}
+/* Card */
+.info-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-card p {
+  text-align: center;
 }
