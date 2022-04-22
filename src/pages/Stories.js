@@ -1,18 +1,38 @@
-// Stories
-//   Features
-//   Pricing
+import React from "react";
+import { storyPageImages } from "../data";
+import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
 
-//   Get an invite
+function Stories() {
+  return (
+    <main>
+      <section className="stories-hero">
+        <article className="stories-hero-text">
+          <h4>Last month's featured story</h4>
+          <h1>Hazy full moon of Appalachia</h1>
+          <p>
+            March 2nd 2020 <span>by John Appleseed</span>
+          </p>
+          <p className="stories-hero-text-paragraph">
+            The dissected plateau area, while not actually made up of geological
+            mountains, is popularly called "mountains," especially in eastern
+            Kentucky and West Virginia, and while the ridges are not high, the
+            terrain is extremely rugged.
+          </p>
+          <a className="btn-arrow btn-arrow--white" href="#">
+            read story
+            <img
+              className="btn-arrow-icon"
+              src={ArrowRightWhite}
+              alt="Arrow Right"
+            />
+          </a>
+        </article>
+      </section>
+    </main>
+  );
+}
 
-//   Last month's featured story
-
-//   Hazy full moon of Appalachia
-//   March 2nd 2020
-//   by John Appleseed
-
-//   The dissected plateau area, while not actually made up of geological mountains,
-//   is popularly called "mountains," especially in eastern Kentucky and West Virginia,
-//   and while the ridges are not high, the terrain is extremely rugged.
+export default Stories;
 
 //   Read the story
 

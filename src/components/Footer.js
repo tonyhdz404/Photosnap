@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LogoWhite from "../assets/shared/desktop/logo-white.svg";
 import FacebookIcon from "../assets/shared/desktop/facebook.svg";
 import YoutubeIcon from "../assets/shared/desktop/youtube.svg";
@@ -23,24 +24,24 @@ export default function Footer() {
         </div>
         <ul className="footer-links">
           <li>
-            <a className="footer__link" href="#">
+            <Link to="/" className="footer__link">
               home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="footer__link" href="#">
+            <Link to="/stories" className="footer__link">
               stories
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="footer__link" href="#">
+            <Link to="/features" className="footer__link">
               features
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="footer__link" href="#">
+            <Link to="/pricing" className="footer__link">
               pricing
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="copywrite-container">

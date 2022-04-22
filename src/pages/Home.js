@@ -3,11 +3,9 @@ import React from "react";
 import Footer from "../components/Footer";
 // Assets
 import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
-import HeroImg from "../assets/home/desktop/create-and-share.jpg";
-import BeautifulStoriesImg from "../assets/home/desktop/beautiful-stories.jpg";
-import DesignedForEveryoneImg from "../assets/home/desktop/designed-for-everyone.jpg";
-// Story Images
-import { homeStoryImages } from "../data";
+import ArrowRight from "../assets/shared/desktop/arrow.svg";
+// Homepage Images
+import { homeStoryImages, homePageImages } from "../data";
 // Card Icons
 import ResponsiveIcon from "../assets/features/desktop/responsive.svg";
 import PhotoLimitIcon from "../assets/features/desktop/no-limit.svg";
@@ -35,13 +33,13 @@ function Home() {
             </button>
           </div>
         </div>
-        <img src={HeroImg} alt="create-and-share" />
+        <img src={homePageImages.createAndShare} alt="create-and-share" />
       </section>
       {/* Beautiful Stories Section*/}
       <section className="home-section">
         <img
           className="section-img beautiful-stories"
-          src={BeautifulStoriesImg}
+          src={homePageImages.beautifulStories}
           alt="create-and-share"
         />
         <div className="home-section-text">
@@ -52,11 +50,11 @@ function Home() {
               Easily add photos, text, embed maps and media from other networks.
               Then share your story with everyone.
             </p>
-            <button className="btn-arrow btn-arrow--white">
+            <button className="btn-arrow ">
               View the stories
               <img
                 className="btn-arrow-icon"
-                src={ArrowRightWhite}
+                src={ArrowRight}
                 alt="Arrow Right"
               />
             </button>
@@ -73,11 +71,11 @@ function Home() {
               audience. Our tool is designed for photographers of all levels,
               brands, businesses you name it.
             </p>
-            <button className="btn-arrow btn-arrow--white">
+            <button className="btn-arrow ">
               View the stories
               <img
                 className="btn-arrow-icon"
-                src={ArrowRightWhite}
+                src={ArrowRight}
                 alt="Arrow Right"
               />
             </button>
@@ -85,22 +83,31 @@ function Home() {
         </div>
         <img
           className="section-img beautiful-stories designed-for-everyone"
-          src={DesignedForEveryoneImg}
+          src={homePageImages.designedForEveryone}
           alt="designed-for-everyone"
         />
       </section>
       <div className="stories-wrapper">
         {homeStoryImages.map((image, idx) => {
           console.log(image);
-          const { img, title } = image;
+          const { src, title, artist } = image;
           return (
             <figure key={idx} className="story-wrapper">
-              <img
-                className="story-img"
-                src={`../assets/stories/desktop/${img}`}
-                alt={title}
-              />
-              <figcaption></figcaption>
+              <img className="story-img" src={src} alt={title} />
+              <figcaption className="story-text">
+                <h3>{title}</h3>
+                <h5>{artist}</h5>
+                <div className="story-divider"></div>
+                <a className="btn-arrow btn-arrow--white" href="#">
+                  read story
+                  <img
+                    className="btn-arrow-icon"
+                    src={ArrowRightWhite}
+                    alt="Arrow Right"
+                  />
+                </a>
+              </figcaption>
+              <div className="accent-bottom"></div>
             </figure>
           );
         })}
@@ -136,7 +143,6 @@ function Home() {
           </article>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

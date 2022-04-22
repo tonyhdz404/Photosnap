@@ -1,24 +1,33 @@
+const homePageImages = {
+  beautifulStories: "images/home/desktop/beautiful-stories.jpg",
+  createAndShare: "images/home/desktop/create-and-share.jpg",
+  designedForEveryone: "images/home/desktop/designed-for-everyone.jpg",
+};
+
 const homeStoryImages = [
   {
     title: "The Mountains",
     artist: "by John Appleseed",
-    img: "mountains.jpg",
+    src: "images/stories/desktop/mountains.jpg",
   },
   {
     title: "Sunset Cityscapes",
     artist: "by Benjamin Cruz",
-    img: "../assets/stories/desktop/cityscapes.jpg",
+    src: "images/stories/desktop/cityscapes.jpg",
   },
   {
     title: "18 Days Voyage",
     artist: "by Alexei Borodin",
-    img: "../assets/stories/desktop/18-days-voyage.jpg",
+    src: "images/stories/desktop/18-days-voyage.jpg",
   },
   {
     title: "Architecturals",
     artist: "by Samantha Brookeeed",
-    img: "../assets/stories/desktop/architecturals.jpg",
+    src: "images/stories/desktop/architecturals.jpg",
   },
 ];
 
-export { homeStoryImages };
+const storyPageImages = {
+  moonOfAppalacia: "images/stories/desktop/moon-of-appalacia.jpg",
+};
+export { homeStoryImages, homePageImages, storyPageImages };

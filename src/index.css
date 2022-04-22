@@ -4,6 +4,7 @@
   --pureBlack: hsl(0, 0%, 0%);
   --lightGrey: hsl(0, 0%, 87%);
   --pureWhite: hsl(0, 0%, 100%);
+  --accentColor: linear-gradient(#5a77ff, #bc7198, #ffc593);
 }
 /* Global Resets */
 *,
@@ -48,6 +49,10 @@ h4 {
   font-size: 1.2rem;
   line-height: 1.6rem;
   letter-spacing: 2px;
+}
+h5 {
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 .copywrite {
   color: gray;
@@ -138,6 +143,9 @@ nav {
 .nav__links > li:not(:last-child) {
   margin-right: 3.6rem;
 }
+.nav__link:hover {
+  color: var(--lightGrey);
+}
 /* Home Page Styles */
 .home-section {
   height: 60rem;
@@ -193,10 +201,54 @@ nav {
   grid-template-columns: repeat(4, 1fr);
 }
 .story-wrapper {
+  cursor: pointer;
+  position: relative;
   width: 100%;
+  transition: all 0.25s ease-in-out;
+}
+.story-wrapper:hover {
+  transform: translateY(-30px);
+}
+.story-wrapper:hover .accent-bottom {
+  opacity: 1;
+}
+/* ! WORKING HERE */
+.accent-bottom {
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 8px;
+  background-image: linear-gradient(#5a77ff, #bc7198, #ffc593);
 }
 .story-img {
   width: 100%;
+}
+.story-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 4rem 4rem 4rem;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0));
+  height: 35rem;
+  width: 100%;
+}
+.story-text h3 {
+  color: var(--pureWhite);
+}
+.story-text h5 {
+  color: var(--pureWhite);
+}
+.story-divider {
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+  margin: 1.6rem 0 2rem 0;
 }
 
 /* Footer Styles */
@@ -228,6 +280,9 @@ footer {
 }
 .footer__link {
   color: var(--pureWhite);
+}
+.footer__link:hover {
+  color: gray;
 }
 
 .social-icons {
@@ -270,3 +325,36 @@ footer {
 .info-card p {
   text-align: center;
 }
+
+/*! Stories Page Styles */
+.stories-hero {
+  width: 100%;
+  height: 75rem;
+  background-image: url("../public/images/stories/desktop/moon-of-appalacia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 12.2rem 0 12.2rem 11.2rem;
+}
+.stories-hero-text {
+  color: var(--lightGrey);
+  max-width: 38.7rem;
+}
+
+.stories-hero-text h4,
+h1,
+span {
+  color: var(--pureWhite);
+}
+.stories-hero-text h4,
+.stories-hero-text-paragraph {
+  margin-bottom: 2.4rem;
+}
+.stories-hero-text h1 {
+  margin-bottom: 1.6rem;
+}
+/* .stories-hero-text-paragraph{
+  margin-bottom: margin-bottom: 2.4rem;;
+} */
