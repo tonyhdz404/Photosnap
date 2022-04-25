@@ -1,5 +1,5 @@
 import React from "react";
-import { storyPageImages } from "../data";
+import { storyImages } from "../data";
 import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
 
 function Stories() {
@@ -7,7 +7,7 @@ function Stories() {
     <main>
       <section className="stories-hero">
         <article className="stories-hero-text">
-          <h4>Last month's featured story</h4>
+          <h4 className="stories-hero-subtitle">Last month's featured story</h4>
           <h1>Hazy full moon of Appalachia</h1>
           <p>
             March 2nd 2020 <span>by John Appleseed</span>
@@ -28,104 +28,33 @@ function Stories() {
           </a>
         </article>
       </section>
+      <div className="stories-wrapper">
+        {storyImages.map((image, idx) => {
+          const { date, src, title, artist } = image;
+          return (
+            <figure key={idx} className="story-wrapper">
+              <img className="story-img" src={src} alt={title} />
+              <figcaption className="story-text">
+                <h5>{date}</h5>
+                <h3>{title}</h3>
+                <h5>{artist}</h5>
+                <div className="story-divider"></div>
+                <a className="btn-arrow btn-arrow--white" href="#">
+                  read story
+                  <img
+                    className="btn-arrow-icon"
+                    src={ArrowRightWhite}
+                    alt="Arrow Right"
+                  />
+                </a>
+              </figcaption>
+              <div className="accent-bottom"></div>
+            </figure>
+          );
+        })}
+      </div>
     </main>
   );
 }
 
 export default Stories;
-
-//   Read the story
-
-//   April 16th 2020
-//   The Mountains
-//   by John Appleseed
-//   Read Story
-
-//   April 14th 2020
-//   Sunset Cityscapes
-//   by Benjamin Cruz
-//   Read Story
-
-//   April 11th 2020
-//   18 Days Voyage
-//   by Alexei Borodin
-//   Read Story
-
-//   April 9th 2020
-//   Architecturals
-//   by Samantha Brooke
-//   Read Story
-
-//   April 7th 2020
-//   World Tour 2019
-//   by Timothy Wagner
-//   Read Story
-
-//   April 7th 2020
-//   World Tour 2019
-//   by Timothy Wagner
-//   Read Story
-
-//   April 3rd 2020
-//   Unforeseen Corners
-//   by William Malcolm
-//   Read Story
-
-//   March 29th 2020
-//   King on Africa: Part II
-//   by Tim Hillenburg
-//   Read Story
-
-//   March 21st 2020
-//   The Trip to Nowhere
-//   by Felicia Rourke
-//   Read Story
-
-//   March 19th 2020
-//   Rage of The Sea
-//   by Mohammed Abdul
-//   Read Story
-
-//   March 16th 2020
-//   Running Free
-//   by Michelle
-//   Read Story
-
-//   March 11th 2020
-//   Behind the Waves
-//   by Lamarr Wilson
-//   Read Story
-
-//   March 9th 2020
-//   Calm Waters
-//   by Samantha Brooke
-//   Read Story
-
-//   March 5th 2020
-//   The Milky Way
-//   by Benjamin Cruz
-//   Read Story
-
-//   March 4th 2020
-//   Night at The Dark Forest
-//   by  Mohammed Abdul
-//   Read Story
-
-//   March 1st 2020
-//   Somwarpet’s Beauty
-//   by Michelle
-//   Read Story
-
-//   February 25th 2020
-//   Land of Dreams
-//   by William Malcolm
-//   Read Story
-
-//   Home
-//   Stories
-//   Features
-//   Pricing
-
-//   Get an invite
-
-//   Copyright 2019. All Rights Reserved
