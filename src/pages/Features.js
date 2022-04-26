@@ -15,7 +15,7 @@ function Features() {
       <section className="home-section home-section--hero">
         <div className="home-section-text">
           <div className="text-wrapper">
-            <h1>Features</h1>
+            <h1 className="h1--white">Features</h1>
             <p>
               We make sure all of our features are designed to be loved by every
               aspiring and even professional photograpers who wanted to share
@@ -93,7 +93,7 @@ function Features() {
       </section>
       <section className="beta-section">
         <div className="beta-section-text-wrapper">
-          <h1>We're in Beta. Get your invite today!</h1>
+          <h1 className="h1--white">We're in Beta. Get your invite today!</h1>
           <button className="btn-arrow btn-arrow--white">
             get an invite
             <img

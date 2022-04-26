@@ -27,11 +27,15 @@ body {
 
 /* Heading Styles */
 h1 {
+  color: black;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4rem;
   letter-spacing: 4.17px;
   line-height: 4.8rem;
+}
+.h1--white {
+  color: white;
 }
 h2 {
   font-weight: 700;
@@ -124,8 +128,8 @@ img {
   color: var(--pureBlack);
 }
 .btn--white:hover {
-  background-color: var(--pureBlack);
-  color: var(--pureWhite);
+  background-color: var(--lightGrey);
+  color: var(--pureBlack);
 }
 
 /* NavBar Styles */
@@ -212,7 +216,7 @@ nav {
 .story-wrapper:hover .accent-bottom {
   opacity: 1;
 }
-/* ! WORKING HERE */
+
 .accent-bottom {
   transition: all 0.25s ease-in-out;
   opacity: 0;
@@ -232,7 +236,7 @@ nav {
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 0 4rem 4rem 4rem;
   background-image: linear-gradient(transparent, rgba(0, 0, 0));
   height: 35rem;
@@ -412,6 +416,7 @@ label {
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
+  color: gray;
 }
 /* Toggle Button */
 .toggle-label::before {
@@ -429,7 +434,6 @@ input[type="checkbox"].toggle + label {
   position: relative;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
-  color: gray;
 }
 /* label + input[type="checkbox"].toggle:checked {
   color: var(--lightGrey);
@@ -466,11 +470,16 @@ input[type="checkbox"].toggle:checked + label::after {
 input[type="checkbox"].toggle:checked + label::before {
   background-color: black;
 }
-
-input[type="checkbox"].toggle:checked + label {
+.label--active {
   color: black;
 }
 
+.cards-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 4.8rem;
+}
 .plan-card {
   width: 35rem;
   display: flex;
@@ -478,14 +487,15 @@ input[type="checkbox"].toggle:checked + label {
   justify-content: space-between;
   align-items: center;
 }
+
 .minor-card {
   background-color: #f5f5f5;
-
   height: 40.7rem;
   padding: 5.6rem 4rem 4rem 4rem;
 }
 
-.minor-card h1 {
+.minor-card h2,
+h1 {
   color: black;
 }
 .minor-card p {
@@ -494,17 +504,73 @@ input[type="checkbox"].toggle:checked + label {
 }
 
 .major-card {
+  margin: 0 3rem;
   background-color: black;
   width: 35rem;
   height: 47rem;
   padding: 8.2rem 4rem 4rem 4rem;
 }
 
-.major-card h1,
-h2 {
-  color: white;
-}
 .major-card p {
   color: gray;
   text-align: center;
+}
+
+/* Compare Section */
+.compare {
+  width: 100%;
+  padding-bottom: 16rem;
+  text-align: center;
+}
+
+.compare-grid {
+  margin: 5.6rem auto;
+  width: 73.1rem;
+  height: 55.2rem;
+
+  display: grid;
+  grid-template-columns: max-content [basic-start] 1fr [basic-end pro-start] 1fr [pro-end business-start] 1fr [business-end];
+  grid-auto-rows: max-content;
+  align-items: center;
+  justify-items: center;
+}
+.compare-grid h4 {
+  text-transform: uppercase;
+  line-height: 1.6rem;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+.compare-grid div {
+  justify-self: stretch;
+}
+.compare-grid-title {
+  margin-bottom: 2.3rem;
+}
+.compare-grid-subtitle {
+  margin: 2.35rem 0;
+}
+.header-divider {
+  height: 1px;
+  background: #000;
+  grid-column: 1 / 5;
+}
+.divider {
+  height: 1px;
+  background: var(--lightGrey);
+  grid-column: 1 / 5;
+}
+.col-1 {
+  margin-left: 2.4rem;
+  justify-self: start !important;
+}
+
+.basic {
+  grid-column: basic-start / basic-end;
+}
+.pro {
+  grid-column: pro-start / pro-end;
+}
+.business {
+  grid-column: business-start / business-end;
 }

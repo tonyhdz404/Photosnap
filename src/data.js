@@ -2,6 +2,14 @@ const homePageImages = {
   beautifulStories: "images/home/desktop/beautiful-stories.jpg",
   createAndShare: "images/home/desktop/create-and-share.jpg",
   designedForEveryone: "images/home/desktop/designed-for-everyone.jpg",
+  // Tablet Versions
+  tabletBeautifulStories: "images/home/tablet/beautiful-stories.jpg",
+  tabletCreateAndShare: "images/home/tablet/create-and-share.jpg",
+  tabletDesignedForEveryone: "images/home/tablet/designed-for-everyone.jpg",
+  // Phone Versions
+  mobileBeautifulStories: "images/home/mobile/beautiful-stories.jpg",
+  mobileCreateAndShare: "images/home/mobile/create-and-share.jpg",
+  mobileDesignedForEveryone: "images/home/mobile/designed-for-everyone.jpg",
 };
 
 const homeStoryImages = [

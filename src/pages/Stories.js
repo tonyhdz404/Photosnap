@@ -8,7 +8,7 @@ function Stories() {
       <section className="stories-hero">
         <article className="stories-hero-text">
           <h4 className="stories-hero-subtitle">Last month's featured story</h4>
-          <h1>Hazy full moon of Appalachia</h1>
+          <h1 className="h1--white">Hazy full moon of Appalachia</h1>
           <p>
             March 2nd 2020 <span>by John Appleseed</span>
           </p>

@@ -17,7 +17,7 @@ function Home() {
       <section className="home-section home-section--hero">
         <div className="home-section-text">
           <div className="text-wrapper">
-            <h1>Create and share your photo Stories.</h1>
+            <h1 className="h1--white">Create and share your photo Stories.</h1>
             <p>
               Photosnap is a platform for photographers and visual storytellers.
               We make it easy to share photos, tell stories and connect with
@@ -33,15 +33,39 @@ function Home() {
             </button>
           </div>
         </div>
-        <img src={homePageImages.createAndShare} alt="create-and-share" />
+        <picture>
+          <source
+            media="(min-width: 768px )"
+            srcset={homePageImages.createAndShare}
+          />
+          <source
+            media="(min-width: 375px )"
+            srcset={homePageImages.tabletCreateAndShare}
+          />
+          <img
+            src={homePageImages.mobileCreateAndShare}
+            alt="create-and-share"
+          />
+        </picture>
       </section>
       {/* Beautiful Stories Section*/}
       <section className="home-section">
-        <img
-          className="section-img beautiful-stories"
-          src={homePageImages.beautifulStories}
-          alt="create-and-share"
-        />
+        <picture>
+          <source
+            media="(min-width: 768px )"
+            srcset={homePageImages.beautifulStories}
+          />
+          <source
+            media="(min-width: 375px )"
+            srcset={homePageImages.tabletBeautifulStories}
+          />
+          <img
+            className="section-img beautiful-stories"
+            src={homePageImages.mobileBeautifulStories}
+            alt="create-and-share"
+          />
+        </picture>
+
         <div className="home-section-text">
           <div className="text-wrapper">
             <h1>Beautiful stories every time</h1>
@@ -81,11 +105,21 @@ function Home() {
             </button>
           </div>
         </div>
-        <img
-          className="section-img beautiful-stories designed-for-everyone"
-          src={homePageImages.designedForEveryone}
-          alt="designed-for-everyone"
-        />
+        <picture>
+          <source
+            media="(min-width: 768px )"
+            srcset={homePageImages.designedForEveryone}
+          />
+          <source
+            media="(min-width: 375px )"
+            srcset={homePageImages.tabletDesignedForEveryone}
+          />
+          <img
+            className="section-img beautiful-stories designed-for-everyone"
+            src={homePageImages.mobileDesignedForEveryone}
+            alt="designed-for-everyone"
+          />
+        </picture>
       </section>
       <div className="stories-wrapper">
         {homeStoryImages.map((image, idx) => {
