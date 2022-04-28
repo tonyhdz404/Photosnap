@@ -12,6 +12,27 @@ const homePageImages = {
   mobileDesignedForEveryone: "images/home/mobile/designed-for-everyone.jpg",
 };
 
+//* Featured Page Images/Icons
+const featuresPageImages = {
+  featuresHero: "images/features/desktop/hero.jpg",
+  tabletFeaturesHero: "images/features/tablet/hero.jpg",
+  phoneFeaturesHero: "images/features/mobile/hero.jpg",
+};
+const featuresPageIcons = {
+  ResponsiveIcon: "images/features/desktop/responsive.svg",
+  PhotoLimitIcon: "images/features/desktop/no-limit.svg",
+  EmbedIcon: "images/features/desktop/embed.svg",
+  CustomDomianIcon: "images/features/desktop/custom-domain.svg",
+  BoostExposureIcon: "images/features/desktop/boost-exposure.svg",
+  DrapAndDropIcon: "images/features/desktop/drag-drop.svg",
+};
+//* Pricing Page Images/Icons
+const pricingPageImgs = {
+  pricingHero: "images/pricing/desktop/hero.jpg",
+  tabletPricingHero: "images/pricing/tablet/hero.jpg",
+  mobilePricingHero: "images/pricing/mobile/hero.jpg",
+  checkIcon: "images/pricing/desktop/check.svg",
+};
 const homeStoryImages = [
   {
     title: "The Mountains",
@@ -142,4 +163,12 @@ const storyImages = [
   },
 ];
 
-export { storyImages, homeStoryImages, homePageImages, storyPageImages };
+export {
+  storyImages,
+  homeStoryImages,
+  homePageImages,
+  storyPageImages,
+  featuresPageImages,
+  featuresPageIcons,
+  pricingPageImgs,
+};

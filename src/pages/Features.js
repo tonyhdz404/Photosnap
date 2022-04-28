@@ -1,13 +1,7 @@
 import React from "react";
 import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
-import FeaturesHero from "../assets/features/desktop/hero.jpg";
-/// Card Icons
-import ResponsiveIcon from "../assets/features/desktop/responsive.svg";
-import PhotoLimitIcon from "../assets/features/desktop/no-limit.svg";
-import EmbedIcon from "../assets/features/desktop/embed.svg";
-import CustomDomianIcon from "../assets/features/desktop/custom-domain.svg";
-import BoostExposureIcon from "../assets/features/desktop/boost-exposure.svg";
-import DrapAndDropIcon from "../assets/features/desktop/drag-drop.svg";
+
+import { featuresPageImages, featuresPageIcons } from "../data";
 
 function Features() {
   return (
@@ -31,13 +25,30 @@ function Features() {
             </button>
           </div>
         </div>
-        <img src={FeaturesHero} alt="create-and-share" />
+        <div className="section-img-wrapper--home-hero">
+          <picture>
+            <source
+              media="(min-width: 800px )"
+              srcSet={featuresPageImages.featuresHero}
+            />
+            <source
+              media="(min-width: 375px )"
+              srcSet={featuresPageImages.tabletFeaturesHero}
+            />
+            <img
+              className="section-img"
+              src={featuresPageImages.mobileFeaturesHero}
+              alt="Features hero"
+            />
+          </picture>
+        </div>
       </section>
       <section className="features-info-section">
-        <div className="info-wrapper">
+        <div className="info-wrapper features-info-wrapper">
           {/* Card One */}
           <article className="info-card">
-            <img src={ResponsiveIcon} alt="100% Responsive" />
+            <img src={featuresPageIcons.ResponsiveIcon} alt="100% Responsive" />
+
             <h3>100% Responsive</h3>
             <p>
               No matter which the device you’re on, our site is fully responsive
@@ -46,7 +57,7 @@ function Features() {
           </article>
           {/* Card Two */}
           <article className="info-card">
-            <img src={PhotoLimitIcon} alt="No limit" />
+            <img src={featuresPageIcons.PhotoLimitIcon} alt="No limit" />
             <h3>No Photo Upload Limit</h3>
             <p>
               Our tool has no limits on uploads or bandwidth. Freely upload in
@@ -55,7 +66,7 @@ function Features() {
           </article>
           {/* Card Three */}
           <article className="info-card">
-            <img src={EmbedIcon} alt="Available to Embed" />
+            <img src={featuresPageIcons.EmbedIcon} alt="Available to Embed" />
             <h3>Available to Embed</h3>
             <p>
               Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube
@@ -64,7 +75,10 @@ function Features() {
           </article>
           {/* Card Four */}
           <article className="info-card">
-            <img src={CustomDomianIcon} alt="100% Responsive" />
+            <img
+              src={featuresPageIcons.CustomDomianIcon}
+              alt="100% Responsive"
+            />
             <h3>Custom Domain</h3>
             <p>
               With Photosnap subscriptions you can host your stories on your own
@@ -73,7 +87,10 @@ function Features() {
           </article>
           {/* Card Five */}
           <article className="info-card">
-            <img src={BoostExposureIcon} alt="100% Responsive" />
+            <img
+              src={featuresPageIcons.BoostExposureIcon}
+              alt="100% Responsive"
+            />
             <h3>Boost Your Exposure</h3>
             <p>
               Users that viewed your story or gallery can easily get notifed of
@@ -82,7 +99,10 @@ function Features() {
           </article>
           {/* Card Six */}
           <article className="info-card">
-            <img src={DrapAndDropIcon} alt="100% Responsive" />
+            <img
+              src={featuresPageIcons.DrapAndDropIcon}
+              alt="100% Responsive"
+            />
             <h3>Drag & Drop Image</h3>
             <p>
               Easily drag and drop your image and get beautiful shots everytime.

@@ -5,11 +5,11 @@ import Footer from "../components/Footer";
 import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
 import ArrowRight from "../assets/shared/desktop/arrow.svg";
 // Homepage Images
-import { homeStoryImages, homePageImages } from "../data";
+import { homeStoryImages, homePageImages, featuresPageIcons } from "../data";
 // Card Icons
-import ResponsiveIcon from "../assets/features/desktop/responsive.svg";
-import PhotoLimitIcon from "../assets/features/desktop/no-limit.svg";
-import EmbedIcon from "../assets/features/desktop/embed.svg";
+// import ResponsiveIcon from "../assets/features/desktop/responsive.svg";
+// import PhotoLimitIcon from "../assets/features/desktop/no-limit.svg";
+// import EmbedIcon from "../assets/features/desktop/embed.svg";
 
 function Home() {
   return (
@@ -33,38 +33,44 @@ function Home() {
             </button>
           </div>
         </div>
-        <picture>
-          <source
-            media="(min-width: 768px )"
-            srcset={homePageImages.createAndShare}
-          />
-          <source
-            media="(min-width: 375px )"
-            srcset={homePageImages.tabletCreateAndShare}
-          />
-          <img
-            src={homePageImages.mobileCreateAndShare}
-            alt="create-and-share"
-          />
-        </picture>
+        {/* Main Section Img */}
+        <div className="section-img-wrapper--home-hero">
+          <picture>
+            <source
+              media="(min-width: 800px )"
+              srcset={homePageImages.createAndShare}
+            />
+            <source
+              media="(min-width: 375px )"
+              srcset={homePageImages.tabletCreateAndShare}
+            />
+            <img
+              className="section-img"
+              src={homePageImages.mobileCreateAndShare}
+              alt="create-and-share"
+            />
+          </picture>
+        </div>
       </section>
       {/* Beautiful Stories Section*/}
       <section className="home-section">
-        <picture>
-          <source
-            media="(min-width: 768px )"
-            srcset={homePageImages.beautifulStories}
-          />
-          <source
-            media="(min-width: 375px )"
-            srcset={homePageImages.tabletBeautifulStories}
-          />
-          <img
-            className="section-img beautiful-stories"
-            src={homePageImages.mobileBeautifulStories}
-            alt="create-and-share"
-          />
-        </picture>
+        <div className="section-img-wrapper--home-hero">
+          <picture>
+            <source
+              media="(min-width: 800px )"
+              srcset={homePageImages.beautifulStories}
+            />
+            <source
+              media="(min-width: 375px )"
+              srcset={homePageImages.tabletBeautifulStories}
+            />
+            <img
+              className="section-img beautiful-stories"
+              src={homePageImages.mobileBeautifulStories}
+              alt="create-and-share"
+            />
+          </picture>
+        </div>
 
         <div className="home-section-text">
           <div className="text-wrapper">
@@ -105,21 +111,24 @@ function Home() {
             </button>
           </div>
         </div>
-        <picture>
-          <source
-            media="(min-width: 768px )"
-            srcset={homePageImages.designedForEveryone}
-          />
-          <source
-            media="(min-width: 375px )"
-            srcset={homePageImages.tabletDesignedForEveryone}
-          />
-          <img
-            className="section-img beautiful-stories designed-for-everyone"
-            src={homePageImages.mobileDesignedForEveryone}
-            alt="designed-for-everyone"
-          />
-        </picture>
+        {/* Section Img */}
+        <div className="section-img-wrapper--home-hero">
+          <picture>
+            <source
+              media="(min-width: 800px )"
+              srcset={homePageImages.designedForEveryone}
+            />
+            <source
+              media="(min-width: 375px )"
+              srcset={homePageImages.tabletDesignedForEveryone}
+            />
+            <img
+              className="section-img"
+              src={homePageImages.mobileDesignedForEveryone}
+              alt="designed-for-everyone"
+            />
+          </picture>
+        </div>
       </section>
       <div className="stories-wrapper">
         {homeStoryImages.map((image, idx) => {
@@ -150,7 +159,7 @@ function Home() {
         <div className="info-wrapper">
           {/* Card One */}
           <article className="info-card">
-            <img src={ResponsiveIcon} alt="100% Responsive" />
+            <img src={featuresPageIcons.ResponsiveIcon} alt="100% Responsive" />
             <h3>100% Responsive</h3>
             <p>
               No matter which the device you’re on, our site is fully responsive
@@ -159,7 +168,7 @@ function Home() {
           </article>
           {/* Card Two */}
           <article className="info-card">
-            <img src={PhotoLimitIcon} alt="No limit" />
+            <img src={featuresPageIcons.PhotoLimitIcon} alt="No limit" />
             <h3>No Photo Upload Limit</h3>
             <p>
               Our tool has no limits on uploads or bandwidth. Freely upload in
@@ -168,7 +177,7 @@ function Home() {
           </article>
           {/* Card Three */}
           <article className="info-card">
-            <img src={EmbedIcon} alt="Available to Embed" />
+            <img src={featuresPageIcons.EmbedIcon} alt="Available to Embed" />
             <h3>Available to Embed</h3>
             <p>
               Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube

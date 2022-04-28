@@ -12,15 +12,13 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <div className="footer-logo-icons">
-          <img src={LogoWhite} alt="photosnap" />
-          <div className="social-icons">
-            <img src={FacebookIcon} alt="facebook" />
-            <img src={YoutubeIcon} alt="youtube" />
-            <img src={TwitterIcon} alt="twitter" />
-            <img src={PinterestIcon} alt="pinterest" />
-            <img src={InstagramIcon} alt="instagram" />
-          </div>
+        <img className="footer-logo" src={LogoWhite} alt="photosnap" />
+        <div className="social-icons">
+          <img src={FacebookIcon} alt="facebook" />
+          <img src={YoutubeIcon} alt="youtube" />
+          <img src={TwitterIcon} alt="twitter" />
+          <img src={PinterestIcon} alt="pinterest" />
+          <img src={InstagramIcon} alt="instagram" />
         </div>
         <ul className="footer-links">
           <li>
