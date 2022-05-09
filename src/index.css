@@ -34,6 +34,10 @@ h1 {
   letter-spacing: 4.17px;
   line-height: 4.8rem;
 }
+main {
+  height: auto;
+}
+
 .h1--white {
   color: white;
 }
@@ -134,6 +138,7 @@ img {
 
 /* NavBar Styles */
 nav {
+  position: relative;
   width: 100%;
   height: 7.2rem;
   display: flex;
@@ -158,6 +163,44 @@ nav {
   border: none;
   display: none;
   transform: scale(0);
+  cursor: pointer;
+}
+.mobile-dropdown {
+  justify-content: space-between;
+  padding: 3.2rem;
+  width: 100%;
+  min-width: 37.5rem;
+  height: 25.3rem;
+  background-color: white;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.25s ease-in-out;
+  transform: translateY(100%);
+  display: flex;
+  flex-direction: column;
+  z-index: 420;
+}
+.dropdown-links {
+  text-align: center;
+}
+.dropdown-links a {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.dropdown-links li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.dropdown-divider {
+  /* margin: 2rem 0; */
+  height: 1px;
+  align-self: stretch;
+  background-color: gray;
+}
+.dropdown-btn {
+  width: 100% !important;
 }
 @media only screen and (max-width: 630px) {
   nav {
@@ -179,6 +222,7 @@ nav {
   height: 60rem;
   display: flex;
 }
+
 .home-section-text {
   flex-grow: 1;
   display: flex;
@@ -188,11 +232,7 @@ nav {
   align-items: center;
   padding: 0 2rem;
 }
-/* @media only screen and (max-width: 800px) {
-  .home-section-text {
-    
-  }
-} */
+
 .text-wrapper {
   width: 38.7rem;
 }
@@ -213,7 +253,14 @@ nav {
 }
 
 .section-img {
+  display: block;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.story-img {
+  display: block;
+  object-fit: contain;
   width: 100%;
   height: 100%;
 }
@@ -452,28 +499,46 @@ footer {
 
 /*! Stories Page Styles */
 .stories-hero {
+  position: relative;
   width: 100%;
   height: 75rem;
-  background-image: url("../public/images/stories/desktop/moon-of-appalacia.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
+}
+
+.stories-hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stories-hero-text-wrapper {
+  display: flex;
+  z-index: 10;
+  height: 100%;
+  width: 72rem;
   padding: 12.2rem 0 12.2rem 11.2rem;
+  transition: all 0.25s ease-in-out;
 }
-@media only screen and (max-width: 800px) {
-  .stories-hero {
-    background-image: url("../public/images/stories/tablet/moon-of-appalacia.jpg");
-    padding-left: 3.9rem;
-  }
-}
+
 .stories-hero-subtitle {
   text-transform: uppercase;
 }
 .stories-hero-text {
   color: var(--lightGrey);
-  max-width: 38.7rem;
+  width: 38.7rem;
+}
+.gradient {
+  transition: all 0.25s ease-in-out;
+  background-image: linear-gradient(
+    to right top,
+    hsla(28, 100%, 79%, 0.5),
+    hsla(329, 36%, 59%, 0.5),
+    hsla(229, 100%, 68%, 0.5),
+    transparent 50% 100%
+  );
 }
 
 .stories-hero-text h4,
@@ -816,5 +881,118 @@ h1 {
   }
   .copywrite-container button {
     margin-bottom: 3.4rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .stories-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .stories-hero {
+    height: 81.2rem;
+    position: relative;
+
+    padding-left: 0;
+  }
+  .stories-hero-bg-img {
+    height: 31.7rem;
+  }
+
+  .home-section {
+    height: auto;
+    flex-direction: column;
+  }
+  .mobile-flip {
+    flex-direction: column-reverse;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  .home-section--hero {
+    height: 71.3rem;
+  }
+  .homepage-section {
+    height: 69rem;
+  }
+  .homepage-text {
+    padding: 0 2.4rem 0 3.3rem;
+
+    height: 41.9rem;
+  }
+  .text-wrapper {
+    width: 100%;
+    height: auto;
+  }
+  /* Story */
+  .stories-hero {
+    flex-direction: column;
+  }
+  .story-hero-wrapper {
+    width: 100%;
+  }
+  .stories-hero-bg-img {
+    width: 100%;
+    position: static;
+  }
+  .stories-hero-text-wrapper {
+    background: #000;
+    height: 49.5rem;
+    width: 100%;
+    padding: 0 2.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stories-hero-text {
+    width: 100%;
+    height: fit-content;
+  }
+  /* Features */
+  .fp-img {
+    width: 100%;
+    height: 29.4rem;
+  }
+  .fp-section {
+    height: 59.4rem;
+  }
+  .short-text-mobile {
+    width: 100%;
+    height: 30rem;
+  }
+  .features-info-section {
+    padding-top: 6.4rem;
+    padding: 6.4rem 3.3rem;
+  }
+  .features-info-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  .beta-section-text-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .beta-section-text-wrapper > button {
+    margin-top: 2.4rem;
+  }
+  /*! CARD */
+  .plans {
+    padding-top: 6.4rem;
+    background-color: lightslategray;
+    height: 134.1rem;
+    align-items: flex-start;
+  }
+  .plans-wrapper {
+    background: white;
+  }
+  .plan-card {
+    height: 40.7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cards-wrapper {
+    background-color: lightgreen;
+    height: 126.9rem;
   }
 }

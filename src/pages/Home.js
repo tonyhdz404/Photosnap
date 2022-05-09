@@ -14,8 +14,8 @@ import { homeStoryImages, homePageImages, featuresPageIcons } from "../data";
 function Home() {
   return (
     <main>
-      <section className="home-section home-section--hero">
-        <div className="home-section-text">
+      <section className="home-section home-section--hero mobile-flip">
+        <div className="home-section-text homepage-text">
           <div className="text-wrapper">
             <h1 className="h1--white">Create and share your photo Stories.</h1>
             <p>
@@ -38,11 +38,11 @@ function Home() {
           <picture>
             <source
               media="(min-width: 800px )"
-              srcset={homePageImages.createAndShare}
+              srcSet={homePageImages.createAndShare}
             />
             <source
-              media="(min-width: 375px )"
-              srcset={homePageImages.tabletCreateAndShare}
+              media="(min-width: 402px )"
+              srcSet={homePageImages.tabletCreateAndShare}
             />
             <img
               className="section-img"
@@ -53,16 +53,16 @@ function Home() {
         </div>
       </section>
       {/* Beautiful Stories Section*/}
-      <section className="home-section">
+      <section className="home-section homepage-section">
         <div className="section-img-wrapper--home-hero">
           <picture>
             <source
               media="(min-width: 800px )"
-              srcset={homePageImages.beautifulStories}
+              srcSet={homePageImages.beautifulStories}
             />
             <source
-              media="(min-width: 375px )"
-              srcset={homePageImages.tabletBeautifulStories}
+              media="(min-width: 402px )"
+              srcSet={homePageImages.tabletBeautifulStories}
             />
             <img
               className="section-img beautiful-stories"
@@ -72,7 +72,7 @@ function Home() {
           </picture>
         </div>
 
-        <div className="home-section-text">
+        <div className="home-section-text homepage-text">
           <div className="text-wrapper">
             <h1>Beautiful stories every time</h1>
             <p>
@@ -92,8 +92,8 @@ function Home() {
         </div>
       </section>
       {/* Designed for Everyone*/}
-      <section className="home-section">
-        <div className="home-section-text">
+      <section className="home-section mobile-flip homepage-section">
+        <div className="home-section-text homepage-text">
           <div className="text-wrapper">
             <h1>Designed for everyone</h1>
             <p>
@@ -116,11 +116,11 @@ function Home() {
           <picture>
             <source
               media="(min-width: 800px )"
-              srcset={homePageImages.designedForEveryone}
+              srcSet={homePageImages.designedForEveryone}
             />
             <source
-              media="(min-width: 375px )"
-              srcset={homePageImages.tabletDesignedForEveryone}
+              media="(min-width: 402px )"
+              srcSet={homePageImages.tabletDesignedForEveryone}
             />
             <img
               className="section-img"
@@ -133,10 +133,14 @@ function Home() {
       <div className="stories-wrapper">
         {homeStoryImages.map((image, idx) => {
           console.log(image);
-          const { src, title, artist } = image;
+          const { srcMobile, src, title, artist } = image;
           return (
             <figure key={idx} className="story-wrapper">
-              <img className="story-img" src={src} alt={title} />
+              <picture>
+                <source media="(min-width: 800px )" srcSet={src} />
+                <source media="(min-width: 402px )" srcSet={src} />
+                <img className="story-img" src={srcMobile} alt={title} />
+              </picture>
               <figcaption className="story-text">
                 <h3>{title}</h3>
                 <h5>{artist}</h5>

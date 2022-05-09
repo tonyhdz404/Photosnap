@@ -14,8 +14,8 @@ function Pricing() {
   }
   return (
     <main>
-      <section className="home-section home-section--hero">
-        <div className="home-section-text">
+      <section className="home-section home-section--hero mobile-flip fp-section">
+        <div className="home-section-text short-text-mobile">
           <div className="text-wrapper">
             <h1 className="h1--white">Pricing</h1>
             <p>
@@ -23,14 +23,6 @@ function Pricing() {
               and visual storytellers. It’s the simple way to create and share
               your photos.
             </p>
-            <button className="btn-arrow btn-arrow--white">
-              get an invite
-              <img
-                className="btn-arrow-icon"
-                src={ArrowRightWhite}
-                alt="Arrow Right"
-              />
-            </button>
           </div>
         </div>
         <div className="section-img-wrapper--home-hero">
@@ -40,12 +32,12 @@ function Pricing() {
               srcSet={pricingPageImgs.pricingHero}
             />
             <source
-              media="(min-width: 375px )"
+              media="(min-width: 402px )"
               srcSet={pricingPageImgs.tabletPricingHero}
             />
             <img
-              className="section-img"
-              src={pricingPageImgs.PricingHero}
+              className="section-img fp-img"
+              src={pricingPageImgs.mobilePricingHero}
               alt="Features hero"
             />
           </picture>

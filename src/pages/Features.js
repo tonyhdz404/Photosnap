@@ -6,8 +6,8 @@ import { featuresPageImages, featuresPageIcons } from "../data";
 function Features() {
   return (
     <main>
-      <section className="home-section home-section--hero">
-        <div className="home-section-text">
+      <section className="home-section home-section--hero mobile-flip fp-section">
+        <div className="home-section-text short-text-mobile">
           <div className="text-wrapper">
             <h1 className="h1--white">Features</h1>
             <p>
@@ -15,14 +15,6 @@ function Features() {
               aspiring and even professional photograpers who wanted to share
               their stories.
             </p>
-            <button className="btn-arrow btn-arrow--white">
-              get an invite
-              <img
-                className="btn-arrow-icon"
-                src={ArrowRightWhite}
-                alt="Arrow Right"
-              />
-            </button>
           </div>
         </div>
         <div className="section-img-wrapper--home-hero">
@@ -32,11 +24,11 @@ function Features() {
               srcSet={featuresPageImages.featuresHero}
             />
             <source
-              media="(min-width: 375px )"
+              media="(min-width: 402px )"
               srcSet={featuresPageImages.tabletFeaturesHero}
             />
             <img
-              className="section-img"
+              className="section-img fp-img"
               src={featuresPageImages.mobileFeaturesHero}
               alt="Features hero"
             />
