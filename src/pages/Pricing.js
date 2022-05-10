@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowRightWhite from "../assets/shared/desktop/arrow-white.svg";
-
+import FullSizedGrid from "../components/FullSizedGrid";
+import SmallGrid from "../components/SmallGrid";
 import { pricingPageImgs } from "../data";
 
 function Pricing() {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 400) {
+      setIsMobile(true);
+    }
+    if (window.innerWidth > 400) {
+      setIsMobile(false);
+    } else {
+      return;
+    }
+  });
+  const [isMobile, setIsMobile] = useState(false);
+
   const [paymentFrequency, setPaymentFrequency] = useState("monthly");
   function handleToggle() {
     if (paymentFrequency === "monthly") {
@@ -12,6 +25,14 @@ function Pricing() {
       setPaymentFrequency("monthly");
     }
   }
+  useEffect(() => {
+    if (window.innerWidth <= 400) {
+      setIsMobile(true);
+    }
+    if (window.innerWidth > 400) {
+      setIsMobile(false);
+    }
+  }, []);
   return (
     <main>
       <section className="home-section home-section--hero mobile-flip fp-section">
@@ -41,11 +62,6 @@ function Pricing() {
               alt="Features hero"
             />
           </picture>
-          {/* <img
-            className="section-img"
-            src={PricingHero}
-            alt="create-and-share"
-          /> */}
         </div>
       </section>
       <section className="plans">
@@ -135,97 +151,7 @@ function Pricing() {
       </section>
       <section className="compare">
         <h1>Compare</h1>
-        <div className="compare-grid">
-          <h4 className="compare-grid-title col-1">The Features</h4>
-          <h4 className="compare-grid-title">Basic</h4>
-          <h4 className="compare-grid-title">Pro</h4>
-          <h4 className="compare-grid-title">Business</h4>
-          <div className="header-divider"></div>
-          <h4 className="compare-grid-subtitle col-1">
-            Unlimited Story Posting
-          </h4>
-          {/* CHECKMARKS */}
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="basic" />
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="pro" />
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">
-            Unlimited Photo Upload
-          </h4>
-          {/* CHECKMARKS */}
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="basic" />
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="pro" />
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">
-            Embedding Custom Content
-          </h4>
-          {/* CHECKMARKS */}
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="pro" />
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">Customize Metadata</h4>
-          {/* CHECKMARKS */}
-          <img src={pricingPageImgs.checkIcon} alt="Check" className="pro" />
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">Advanced Metrics</h4>
-          {/* CHECKMARKS */}
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">Photo Downloads</h4>
-          {/* CHECKMARKS */}
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">
-            Search Engine Indexing
-          </h4>
-          {/* CHECKMARKS */}
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-          <div className="divider"></div>
-          <h4 className="compare-grid-subtitle col-1">Custom Analytics</h4>
-          {/* CHECKMARKS */}
-          <img
-            src={pricingPageImgs.checkIcon}
-            alt="Check"
-            className="business"
-          />
-          <div className="divider"></div>
-        </div>
+        {(isMobile && <SmallGrid />) || <FullSizedGrid />}
       </section>
       <section className="beta-section">
         <div className="beta-section-text-wrapper">

@@ -132,7 +132,6 @@ function Home() {
       </section>
       <div className="stories-wrapper">
         {homeStoryImages.map((image, idx) => {
-          console.log(image);
           const { srcMobile, src, title, artist } = image;
           return (
             <figure key={idx} className="story-wrapper">

@@ -40,17 +40,29 @@ function Navbar() {
         <div className="mobile-dropdown">
           <ul className="dropdown-links">
             <li>
-              <Link to="/stories" className="dropdown__link">
+              <Link
+                onClick={() => setShowDropdown(!showDropdown)}
+                to="/stories"
+                className="dropdown__link"
+              >
                 stories
               </Link>
             </li>
             <li>
-              <Link to="/features" className="dropdown__link">
+              <Link
+                onClick={() => setShowDropdown(!showDropdown)}
+                to="/features"
+                className="dropdown__link"
+              >
                 features
               </Link>
             </li>
             <li>
-              <Link to="/pricing" className="dropdown__link">
+              <Link
+                onClick={() => setShowDropdown(!showDropdown)}
+                to="/pricing"
+                className="dropdown__link"
+              >
                 pricing
               </Link>
             </li>

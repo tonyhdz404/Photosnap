@@ -883,8 +883,66 @@ h1 {
     margin-bottom: 3.4rem;
   }
 }
-
+/*! Mobile Grid */
+.mobile-grid {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: lightgreen; */
+}
+.mobile-grid-header {
+  align-self: start;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.mobile-row-header {
+  margin-bottom: 1.6rem;
+}
+.mobile-grid-divider {
+  margin: 2.35rem 0;
+  height: 1px;
+}
+.mobile-grid-divider--last {
+  margin-bottom: 0;
+}
+.mobile-grid-divider--main {
+  background-color: #000;
+}
+.mobile-grid-divider--minor {
+  background-color: #dfdfdf;
+}
+.mobile-grid-row {
+  /* background-color: lightcoral; */
+  display: grid;
+  justify-items: start;
+  grid-template-columns: [basic-start] 1fr [basic-end pro-start] 1fr [pro-end business-start] 1fr [business-end];
+  grid-template-rows: max-content [check-start] max-content [check-end];
+}
+.mobile-check {
+  grid-row: check-start / check-end;
+}
+.mobile-basic {
+  grid-column: basic-start / basic-end;
+}
+.mobile-pro {
+  grid-column: pro-start / pro-end;
+}
+.mobile-business {
+  grid-column: business-start / business-end;
+}
+@media only screen and (max-width: 940px) {
+  .copywrite-container {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 400px) {
+  .compare {
+    padding: 0 2.8rem 6.4rem 2.8rem;
+  }
+  .compare h1 {
+    margin-bottom: 1.6rem;
+  }
   .stories-wrapper {
     grid-template-columns: 1fr;
   }
@@ -976,23 +1034,42 @@ h1 {
   /*! CARD */
   .plans {
     padding-top: 6.4rem;
-    background-color: lightslategray;
-    height: 134.1rem;
+    padding-bottom: 6.4rem;
+    height: auto;
     align-items: flex-start;
   }
   .plans-wrapper {
+    height: 100%;
     background: white;
   }
   .plan-card {
-    height: 40.7rem;
+    height: 40.7rem !important;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
+  .major-card {
+    padding: 4.8rem 2.2rem !important;
+  }
+  .minor-card {
+    padding: 5.6rem 2.2rem 4rem 2.2rem !important;
+  }
+  .price-details-wrapper p,
+  h1 {
+    text-align: center !important;
+  }
+  .plan-details-wrapper p,
+  h2 {
+    text-align: center !important;
+  }
+
   .cards-wrapper {
-    background-color: lightgreen;
-    height: 126.9rem;
+    height: auto;
+  }
+  .copywrite {
+    text-align: center;
+    width: 79%;
   }
 }

@@ -51,7 +51,9 @@ export default function Footer() {
               alt="Arrow Right"
             />
           </button>
-          <p className="copywrite">Copyright 2019. All Rights Reserved</p>
+          <p className="copywrite">
+            Copyright 2022. All Rights Reserved <br /> Antonio Hernandez
+          </p>
         </div>
       </div>
     </footer>
